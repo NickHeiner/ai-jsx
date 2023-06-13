@@ -1,6 +1,6 @@
 import * as LLMx from '@fixieai/ai-jsx';
 import { Element } from '@fixieai/ai-jsx';
-import { LogLevel } from '@fixieai/ai-jsx/core/log';
+import { LogLevel, pinoLogger } from '@fixieai/ai-jsx/core/log';
 import { Completion } from '@fixieai/ai-jsx/core/completion';
 import { Inline } from '@fixieai/ai-jsx/core/inline';
 
@@ -35,4 +35,4 @@ function CharacterGenerator() {
   );
 }
 
-console.log(await LLMx.createRenderContext({ logger: ConsoleLogger }).render(<CharacterGenerator />));
+console.log(await LLMx.createRenderContext({ logger: pinoLogger() }).render(<CharacterGenerator />));
